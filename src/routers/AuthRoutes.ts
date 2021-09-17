@@ -1,14 +1,12 @@
-import { Router, Request, Response } from "express";
-import AuthController from "../controller/AuthController";
-import IRouter from "./RouteInterface";
-import BaseRoutes from "./BaseRoutes";
-import validate from "../middlewares/AuthValidator";
+import AuthController from '../controller/AuthController';
+import BaseRoutes from './BaseRoutes';
+import { RegisterValidator, LoginValidator } from '../validation/auth';
 
 class AuthRoutes extends BaseRoutes {
-    public routes(): void{
-        this.router.post("/register", validate, AuthController.register);
-        this.router.post("/login", AuthController.login);
-    }
+  public routes(): void {
+    this.router.post('/register', RegisterValidator, AuthController.register);
+    this.router.post('/login', LoginValidator, AuthController.login);
+  }
 }
 
 export default new AuthRoutes().router;
