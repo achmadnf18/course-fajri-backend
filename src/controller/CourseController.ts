@@ -32,6 +32,7 @@ class CourseController {
     try {
       const service: CourseService = new CourseService(req);
       const detail = await service.getDetailCourse();
+
       return res.send({ data: detail, status: true });
     } catch (error: any) {
       return res.status(500).send({ error: error.message, status: false });
@@ -52,6 +53,16 @@ class CourseController {
     try {
       const service: CourseService = new CourseService(req);
       const categories = await service.getDiscoveryCourse();
+      return res.send({ data: categories, status: true });
+    } catch (error: any) {
+      return res.status(500).send({ error: error.message, status: false });
+    }
+  }
+
+  async getCourseByCategory(req: Request, res: Response): Promise<Response> {
+    try {
+      const service: CourseService = new CourseService(req);
+      const categories = await service.getCourseByCategory();
       return res.send({ data: categories, status: true });
     } catch (error: any) {
       return res.status(500).send({ error: error.message, status: false });

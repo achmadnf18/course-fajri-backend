@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { check, validationResult } from 'express-validator';
 
 const validate = [
-  check('username').isString(),
+  check('email').isEmail(),
   check('password').isLength({ min: 8 }),
 
   (req: Request, res: Response, next: NextFunction) => {

@@ -11,10 +11,10 @@ class Authentication {
       return result;
     }
 
-    public static generateToken = async (id: number, username: string, password: string): Promise<string> => {
-      const secretKey: string = process.env.JWT_SECRET_KEY || 'secret';
+    public static generateToken = async (props: object): Promise<string> => {
+      const secretKey: string = process.env.JWT_SECRET_KEY || '4chm4dnurf4jr1';
 
-      const token: string = jwt.sign({ id, username, password }, secretKey);
+      const token: string = jwt.sign(props, secretKey);
       return token;
     }
 }

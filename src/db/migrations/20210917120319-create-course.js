@@ -29,6 +29,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: { model: 'categories', key: 'id' }
       },
+      instructor_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'users', key: 'id' }
+      },
       created_at: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now')

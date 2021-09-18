@@ -13,6 +13,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models.category);
+
+      this.belongsTo(models.user, { foreignKey: 'instructor_id' });
+      this.hasOne(models.upload_file_morph, { foreignKey: 'related_id' });
     }
   }
   course.init({
@@ -20,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     price: DataTypes.DECIMAL(19, 0),
     category_id: DataTypes.INTEGER,
+    instructor_id: DataTypes.INTEGER,
     rating: DataTypes.DECIMAL(18, 2),
     created_at: DataTypes.DATE,
     created_by: DataTypes.INTEGER,

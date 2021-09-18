@@ -4,6 +4,7 @@ import getPopularCategoryCourseService from './courses/getPopularCategoryCourseS
 import getAllCourseService from './courses/getAllCourseService';
 import getDetailCourseService from './courses/getDetailCourseService';
 import getDiscoveryCourseService from './courses/getDiscoveryCourseService';
+import getCourseByCategoryService from './courses/getCourseByCategoryService';
 
 class CourseService {
     credential: {
@@ -49,6 +50,12 @@ class CourseService {
       const keyword: string = this.query.s as string;
 
       const res = await getDiscoveryCourseService(keyword);
+      return res;
+    }
+
+    getCourseByCategory = async () => {
+      const slug: string = this.params.slug;
+      const res = await getCourseByCategoryService(slug);
       return res;
     }
 }

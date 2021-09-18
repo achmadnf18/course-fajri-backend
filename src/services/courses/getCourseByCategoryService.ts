@@ -3,18 +3,14 @@ import { sequelize } from '../../db/models';
 
 const db = require('../../db/models');
 
-const getDetailCourseService = async (id: Number): Promise<any> => {
+const getCourseByCategoryService = async (slug: string): Promise<any> => {
   try {
-    const result = await db.course.findOne({
-      where: { id, is_deleted: 0 },
+    const result = await db.course.findAll({
+      where: { is_deleted: 0, '$category.slug$': slug },
       attributes: {
-        include: [
-          [sequelize.col('`user`.`full_name`'), 'instructor'],
-          [sequelize.col('`category`.`name`'), 'category_name']
-        ]
+        include: [[sequelize.col('`category`.`name`'), 'category_name']]
       },
       include: [
-        { required: false, model: db.user, attributes: [] },
         { required: true, model: db.category, attributes: [] },
         {
           required: false,
@@ -36,4 +32,4 @@ const getDetailCourseService = async (id: Number): Promise<any> => {
   }
 };
 
-export default getDetailCourseService;
+export default getCourseByCategoryService;

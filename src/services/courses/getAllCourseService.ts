@@ -11,7 +11,17 @@ const getAllCourseService = async (): Promise<any> => {
         include: [[sequelize.col('`category`.`name`'), 'category_name']]
       },
       include: [
-        { required: true, model: db.category, attributes: [] }
+        { required: true, model: db.category, attributes: [] },
+        {
+          required: false,
+          model: db.upload_file_morph,
+          include: [
+            {
+              required: true,
+              model: db.upload_file
+            }
+          ]
+        }
       ]
     });
 

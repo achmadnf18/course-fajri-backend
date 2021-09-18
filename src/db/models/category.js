@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   category.init({
     name: DataTypes.STRING,
-    url_string: DataTypes.STRING,
+    slug: DataTypes.STRING,
     description: DataTypes.TEXT,
     created_at: DataTypes.DATE,
     created_by: DataTypes.INTEGER,

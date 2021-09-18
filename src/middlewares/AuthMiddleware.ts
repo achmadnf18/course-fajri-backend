@@ -5,7 +5,7 @@ const validAuth = (req: Request, res: Response, next: NextFunction): any => {
   try {
     if (!req.headers.authorization) return res.status(401).send('Not Authorized');
 
-    const secretKey: string = process.env.JWT_SECRET_KEY || 'secret';
+    const secretKey: string = process.env.JWT_SECRET_KEY || '4chm4dnurf4jr1';
     const token: string = req.headers.authorization.split(' ')[1];
 
     const credential: string | object = jwt.verify(token, secretKey);
