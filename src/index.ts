@@ -40,7 +40,7 @@ class App {
     }
 }
 
-const port: Number = 3010;
+const port = process.env.PORT || 3010;
 const { app } = new App();
 app.listen(port, () => {
   console.log(`listen on port ${port}`);
