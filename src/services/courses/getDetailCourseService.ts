@@ -9,8 +9,8 @@ const getDetailCourseService = async (id: Number): Promise<any> => {
       where: { id, is_deleted: false },
       attributes: {
         include: [
-          [sequelize.col('`user`.`full_name`'), 'instructor'],
-          [sequelize.col('`category`.`name`'), 'category_name']
+          [sequelize.col('user.full_name'), 'instructor'],
+          [sequelize.col('category.name'), 'category_name']
         ]
       },
       include: [
