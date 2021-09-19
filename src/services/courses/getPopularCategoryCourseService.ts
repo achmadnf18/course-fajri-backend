@@ -9,7 +9,7 @@ const getPopularCategoryCourseService = async (): Promise<any> => {
       where: { is_deleted: 0 },
       group: ['category_id'],
       attributes: [
-        [sequelize.col('`category`.`name`'), 'category_name'],
+        [sequelize.col('category.name'), 'category_name'],
         [sequelize.fn('AVG', sequelize.col('rating')), 'rating']
       ],
       include: [

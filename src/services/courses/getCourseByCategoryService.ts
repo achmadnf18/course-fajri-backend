@@ -8,7 +8,7 @@ const getCourseByCategoryService = async (slug: string): Promise<any> => {
     const result = await db.course.findAll({
       where: { is_deleted: 0, '$category.slug$': slug },
       attributes: {
-        include: [[sequelize.col('`category`.`name`'), 'category_name']]
+        include: [[sequelize.col('category.name'), 'category_name']]
       },
       include: [
         { required: true, model: db.category, attributes: [] },
