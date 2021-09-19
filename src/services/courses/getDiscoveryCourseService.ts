@@ -7,7 +7,7 @@ const getDiscoveryCourseService = async (keyword: string): Promise<any> => {
   try {
     const result = await db.course.findAll({
       where: {
-        is_deleted: 0,
+        is_deleted: false,
         [Sequelize.Op.and]: [
           sequelize.where(sequelize.fn('lower', sequelize.col('name')), 'like', `%${keyword.toLowerCase()}%`)
         ]
