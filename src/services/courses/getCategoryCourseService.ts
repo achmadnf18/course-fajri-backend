@@ -5,7 +5,7 @@ const db = require('../../db/models');
 const getCategoryCourseService = async (): Promise<any> => {
   try {
     const result = await db.category.findAll({
-      where: { is_deleted: 0 }
+      where: { is_deleted: false }
     });
 
     return result;

@@ -6,7 +6,7 @@ const db = require('../../db/models');
 const getAllCourseService = async (): Promise<any> => {
   try {
     const result = await db.course.findAll({
-      where: { is_deleted: 0 },
+      where: { is_deleted: false },
       attributes: {
         include: [[sequelize.col('category.name'), 'category_name']]
       },
