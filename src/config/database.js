@@ -24,7 +24,9 @@ module.exports = {
     database: config.database,
     username: config.user,
     password: config.password,
-    dialect: 'postgresql',
-    ssl: true,
+    dialect: 'postgres',
+    dialectOptions: {
+      ssl: true
+    }
   }
 };
