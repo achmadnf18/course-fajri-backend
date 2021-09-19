@@ -1,8 +1,35 @@
-## SETUP DB
-# 1. Create Database on mysql server
-CREATE DATABASE [db_name]; // e.g.: CREATE DATABASE coursedb;
-# 2. Edit .env file sesuaikan config database
-# 3. Migrate
+## Installation
+
+```
+npm i
+```
+or
+```
+yarn
+````
+
+## Setup local database
+Please install project *course-fajri-admin* first
+```
+yarn
+```
+
+Do Migration in this project
+```
 npx sequelize-cli db:migrate
-# 4. Seeding
+```
+
+Do Seeding in this project
+```
 npx sequelize-cli db:seed:all
+```
+
+## Run project
+Split 2 terminal, for tyscript compiler
+```
+yarn ts
+```
+and nodemon
+```
+yarn dev
+```
