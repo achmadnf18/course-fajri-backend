@@ -26,7 +26,10 @@ module.exports = {
     password: config.password,
     dialect: 'postgres',
     dialectOptions: {
-      ssl: true
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
     }
   }
 };
