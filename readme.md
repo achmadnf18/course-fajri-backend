@@ -9,12 +9,22 @@ yarn
 ````
 
 ## Setup local database
-Please install project <https://github.com/achmadnf18/course-fajri-admin/> first
+
+Create local database on mysql
 ```
-yarn
+CREATE DATABASE coursedb;
 ```
 
-Do Migration in this project
+Please install project <https://github.com/achmadnf18/course-fajri-admin/> first
+```
+yarn --no-optional
+```
+and
+```
+yarn develop
+```
+
+Back to this project, do Migration in this project
 ```
 npx sequelize-cli db:migrate
 ```
