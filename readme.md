@@ -34,6 +34,8 @@ Do Seeding in this project
 npx sequelize-cli db:seed:all
 ```
 
+### OR you can just execute ./*_coursedb.sql on mysql
+
 ## Run project
 Split 2 terminal, for tyscript compiler
 ```
