@@ -9,7 +9,7 @@ yarn
 ````
 
 ## Setup local database
-Please install project *course-fajri-admin* first
+Please install project <https://github.com/achmadnf18/course-fajri-admin/> first
 ```
 yarn
 ```
