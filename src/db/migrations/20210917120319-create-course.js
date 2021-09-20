@@ -39,7 +39,6 @@ module.exports = {
         defaultValue: Sequelize.fn('now')
       },
       created_by: {
-        allowNull: false,
         type: Sequelize.INTEGER
       },
       updated_at: {
@@ -57,7 +56,10 @@ module.exports = {
       },
       deleted_by: {
         type: Sequelize.INTEGER
-      }
+      },
+      published_at: {
+        type: Sequelize.DATE
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {

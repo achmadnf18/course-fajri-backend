@@ -26,7 +26,7 @@ yarn develop
 
 Back to this project, do Migration in this project
 ```
-npx sequelize-cli db:migrate
+npx sequelize-cli db:migrate:all
 ```
 
 Do Seeding in this project

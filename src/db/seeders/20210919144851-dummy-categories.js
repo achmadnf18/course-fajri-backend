@@ -2,12 +2,11 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Users', [
+    return queryInterface.bulkInsert('Categories', [
       {
-        username: 'achmadnf17',
-        email: 'achmad17nov@gmail.com',
-        password: '$2b$10$zn2AvRWKflZ9Ifk8om6xEOVHoaodc3uP2GkNCusVBLQRPOV1zzDQC',
-        full_name: 'Achmad Nur Fajri',
+        name: 'Mobile Apps',
+        slug: 'mobile-apps',
+        description: 'Mobile Development Courses',
         created_at: new Date(),
         created_by: 1,
         updated_at: new Date(),
@@ -16,10 +15,9 @@ module.exports = {
         is_deleted: 0
       },
       {
-        username: 'angela.yu',
-        email: 'angela.yu@gmail.com',
-        password: '$2b$10$zn2AvRWKflZ9Ifk8om6xEOVHoaodc3uP2GkNCusVBLQRPOV1zzDQC',
-        full_name: 'Angela Yu',
+        name: 'Data Science',
+        slug: 'data-science',
+        description: 'Data Science Courses',
         created_at: new Date(),
         created_by: 1,
         updated_at: new Date(),
@@ -28,10 +26,9 @@ module.exports = {
         is_deleted: 0
       },
       {
-        username: 'dondon17',
-        email: 'dony@gmail.com',
-        password: '$2b$10$zn2AvRWKflZ9Ifk8om6xEOVHoaodc3uP2GkNCusVBLQRPOV1zzDQC',
-        full_name: 'Dony',
+        name: 'Programming Languages',
+        slug: 'programming-languages',
+        description: 'Programming Languages Courses',
         created_at: new Date(),
         created_by: 1,
         updated_at: new Date(),
@@ -43,6 +40,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Users', null, {});
-  },
+    return queryInterface.bulkDelete('Categories', null, {});
+  }
 };

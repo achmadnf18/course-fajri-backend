@@ -43,7 +43,10 @@ module.exports = {
       },
       deleted_by: {
         type: Sequelize.INTEGER
-      }
+      },
+      published_at: {
+        type: Sequelize.DATE
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
