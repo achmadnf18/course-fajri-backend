@@ -3,10 +3,15 @@ import { sequelize } from '../../db/models';
 
 const db = require('../../db/models');
 
-const getAllCourseService = async (): Promise<any> => {
+const getAllCourseService = async (sortBy: string = 'rating', sortType: string = 'desc'): Promise<any> => {
   try {
+
+    if(sortBy == 'popularity') sortBy = 'rating';
+    const orderBy = [[sortBy, sortType]] 
+
     const result = await db.course.findAll({
       where: { is_deleted: false },
+      order: orderBy,
       attributes: {
         include: [[sequelize.col('category.name'), 'category_name']]
       },

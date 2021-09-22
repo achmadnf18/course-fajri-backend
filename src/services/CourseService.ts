@@ -25,7 +25,10 @@ class CourseService {
     }
 
     getAllCourse = async () => {
-      const res = await getAllCourseService();
+      const sortBy: string = this.query._sortBy as string;
+      const sortType: string = this.query._sortType as string;
+
+      const res = await getAllCourseService(sortBy, sortType);
       return res;
     }
 
